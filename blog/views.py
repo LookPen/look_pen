@@ -3,7 +3,7 @@ from django.views import generic
 import blog.control as c_blog
 
 
-class HomeView(generic.ListView):
+class HomeView(generic.DetailView):
     def get(self, request, *args, **kwargs):
         """
         导航信息
@@ -13,17 +13,29 @@ class HomeView(generic.ListView):
         :return:
         """
         pid = request.GET.get('pid', 1)
-        sub_id = request.GET.get('sub_id', None)
 
-        # 1、获取导航、标签
+        # 获取导航、标签
         mains = c_blog.get_main_category()
         subs = c_blog.get_sub_category(pid)
         tags = c_blog.get_tags()
 
-        # 如果传了sub_id 则以请求为准
-        sub_id = sub_id if sub_id else subs[0].id
+        return render(request, 'index.html', context={'mains': mains, 'subs': subs, 'tags': tags})
 
-        # 2、获取内容列表
-        articles = c_blog.get_articles_by_category(sub_id)
 
-        return render(request, 'index.html', context={'mains': mains, 'subs': subs, 'tags': tags, 'articles': articles})
+class ArticleView(generic.ListView):
+    def get(self, request, *args, **kwargs):
+        """
+        文章列表
+        :param request:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        sub_id = request.GET.get('sub_id', None)
+
+        if sub_id:
+            articles = c_blog.get_articles_by_category(sub_id)
+        else:
+            articles = []
+
+        return render(request, 'sub/article_list.html', context={'articles': articles})

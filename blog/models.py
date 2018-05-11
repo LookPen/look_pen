@@ -17,9 +17,9 @@ class Category(BaseModel):
     """
     STYLE = ((0, '分隔符'), (1, '固定'), (2, '主要'), (3, '折叠'),)
 
-    parent = models.ForeignKey('self', verbose_name='父id', db_column='pid', on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', verbose_name='父id', null=True, db_column='pid', on_delete=models.CASCADE)
     name = models.CharField('名称', db_column='name', max_length=50)
-    style = models.IntegerField('呈现样式', db_column='style', choices=STYLE)
+    style = models.IntegerField('呈现样式', db_column='style', choices=STYLE, default=0)
     sort = models.IntegerField('顺序', db_column='sort', default=1)
 
     def save(self, *args, **kwargs):
@@ -36,7 +36,7 @@ class Category(BaseModel):
 
     class Meta:
         db_table = "category"
-        ordering = 'sort'
+        ordering = ['sort']
 
 
 class Tag(BaseModel):
@@ -61,7 +61,7 @@ class Article(BaseModel):
     title = models.CharField('标题', db_column='title', max_length=200);
     content = models.TextField('内容', db_column='content')
     category = models.ForeignKey(Category, verbose_name='类型', null=True, on_delete=models.SET_NULL)
-    tags = models.ManyToManyField(Tag, verbose_name='标签', null=True)
+    tags = models.ManyToManyField(Tag, verbose_name='标签')
 
     image = models.ImageField('图片', db_column='image')
     view_count = models.IntegerField('浏览次数', db_column='view_count', default=0)
