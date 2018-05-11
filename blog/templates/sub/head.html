@@ -1,0 +1,78 @@
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-default custom-nav">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#collapse-menu"
+                        aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="header-text" href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+
+                <a class="header-text navbar-link active" href="#">归档</a>
+                <a class="header-text navbar-link" href="#">网站日志</a>
+
+                <a class="header-text search-header-btn hidden-lg hidden-md glyphicon glyphicon-search"></a>
+
+            </div>
+
+            <div class="search-form hidden-xs hidden-sm">
+                <input type="text" class="search" placeholder="请输入..." onfocus="this.placeholder=''"
+                       onblur="this.placeholder='请输入...'"/>
+                <span class="search-btn  glyphicon glyphicon-search"></span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="collapse-menu">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="#">.Net</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Office Online</a></li>
+                    <li><a href="#">Docker</a></li>
+
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            其他
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a href="#">IIS</a></li>
+                            <li><a href="#">UML</a></li>
+                            <li><a href="#">设计模式</a></li>
+                            <li><a href="#">Git</a></li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Angular</a></li>
+                            <li><a href="#">Bootstrap</a></li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Excel</a></li>
+                            <li><a href="#">Office 插件</a></li>
+                            <li><a href="#">Redis</a></li>
+                            <li><a href="#">Sharepoint</a></li>
+                            <li><a href="#">Win32</a></li>
+                            <li><a href="#">Ubontu</a></li>
+                            <li><a href="#">OCR</a></li>
+
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">兴趣</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+</header>
