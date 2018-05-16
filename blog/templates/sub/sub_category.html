@@ -1,3 +1,11 @@
 {% for s in subs %}
-    <a title="Entity Framework" class="menu-item" href="?sid={{ s.id }}">{{ s.name }}</a>
+    <a title="{{ s.name }}" class="menu-item" id="{{ s.id }}" onclick="get_article_list({{ s.id }})"
+       href="javascript:void(0);">{{ s.name }}</a>
 {% endfor %}
+
+<script>
+    $(document).ready(function () {
+        var id=$('#sub_category .menu-item').first().attr('id')
+        get_article_list(id)
+    })
+</script>

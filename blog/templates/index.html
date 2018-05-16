@@ -13,6 +13,8 @@
 
     <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.jpg' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 
 </head>
@@ -23,12 +25,12 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2 col-sm-3 text-right hidden-xs left-menu">
-            {% include 'sub/sub_category.html' %}
+        <div id="sub_category" class="col-md-2 col-sm-3 text-right hidden-xs left-menu">
+
         </div>
 
-        <div class="col-md-7 col-sm-9 ">
-            {% include 'sub/article_list.html' %}
+        <div id="article_list" class="col-md-7 col-sm-9 ">
+
         </div>
 
         <div class="col-md-3 col-sm-12 right-menu">
@@ -99,6 +101,13 @@
 <script src="{% static 'lib/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/base.js' %}"></script>
+<script src="{% static 'js/blog.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+        get_sub_category(1)
+    })
+</script>
 
 </body>
 

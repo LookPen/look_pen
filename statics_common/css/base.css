@@ -1,0 +1,8 @@
+.loading {
+    background-image: url("../img/loading.gif");
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}

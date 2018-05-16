@@ -63,10 +63,10 @@ WSGI_APPLICATION = 'look_pen.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "HOST": '104.225.144.102',
+        "HOST": '127.0.0.1',
         "NAME": 'look_pen',
-        "USER": 'pen',
-        "PASSWORD": 'swartz.dzjx',
+        "USER": 'root',
+        "PASSWORD": 'root',
         "PORT": '3306',
         "OPTIONS": {
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",

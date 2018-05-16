@@ -22,8 +22,8 @@
     color: #f20d0d;
 }
 
-.custom-nav > .container a.active {
-    color: #f20d0d;
+.custom-nav .container a.active {
+    color: #f20d0d !important;
 }
 
 .custom-nav .header-text {
@@ -80,6 +80,7 @@
 .left-menu {
     margin-top: 15px;
     overflow: hidden;
+    min-height: 460px;
 }
 
 .left-menu .menu-item {

@@ -16,7 +16,8 @@
                 <a class="header-text" href="#"><img src="{% static 'img/logo.jpg' %}"></a>
 
                 {% for k in mains.1 %}
-                    <a class="header-text navbar-link" href="?pid={{ k.id }}">{{ k.name }}</a>
+                    <a class="header-text navbar-link" id="{{ k.id }}" onclick="get_sub_category({{ k.id }})"
+                       href="javascript:void(0);">{{ k.name }}</a>
                 {% endfor %}
 
                 <a class="header-text search-header-btn hidden-lg hidden-md glyphicon glyphicon-search"></a>
@@ -33,7 +34,7 @@
                 <ul class="nav navbar-nav">
 
                     {% for k in mains.2 %}
-                        <li><a href="?pid={{ k.id }}">{{ k.name }}</a></li>
+                        <li><a onclick="get_sub_category({{ k.id }})" id="{{ k.id }}" href="javascript:void(0);">{{ k.name }}</a></li>
                     {% endfor %}
 
                     <li class="dropdown">
@@ -46,7 +47,8 @@
                         <ul class="dropdown-menu">
                             {% for k in mains.3 %}
                                 {% if k.style == 3 %}
-                                    <li><a href="?pid={{ k.id }}">{{ k.name }}</a></li>
+                                    <li><a href="javascript:void(0);" id="{{ k.id }}"
+                                           onclick="get_sub_category({{ k.id }})">{{ k.name }}</a></li>
                                 {% else %}
                                     <li role="separator" class="divider"></li>
                                 {% endif %}
