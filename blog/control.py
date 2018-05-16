@@ -10,7 +10,7 @@ def get_main_category():
     categories = list(m_blog.Category.objects.filter(parent_id=0).values('id', 'name', 'style'))
     category_data[1] = filter(lambda sa: sa['style'] == 1, categories)
     category_data[2] = filter(lambda sa: sa['style'] == 2, categories)
-    category_data[3] = filter(lambda sa: sa['style'] == 3, categories)
+    category_data[3] = filter(lambda sa: sa['style'] == 3 or sa['style'] == 0, categories)
 
     return category_data
 
@@ -22,7 +22,7 @@ def get_sub_category(pid):
     :return:
     """
 
-    return m_blog.Category.objects.filter(parent_id=0).values('id', 'name', 'style')
+    return m_blog.Category.objects.filter(parent_id=pid).values('id', 'name', 'style')
 
 
 def get_tags():

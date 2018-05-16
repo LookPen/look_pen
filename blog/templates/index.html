@@ -22,7 +22,72 @@
 {% include 'sub/head.html' %}
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-2 col-sm-3 text-right hidden-xs left-menu">
+            {% include 'sub/sub_category.html' %}
+        </div>
 
+        <div class="col-md-7 col-sm-9 ">
+            {% include 'sub/article_list.html' %}
+        </div>
+
+        <div class="col-md-3 col-sm-12 right-menu">
+            <div class="menu-item author">
+                <div class="head">Pen 丶</div>
+                <p>不要停留、你是人间平凡的狗..</p>
+                <a>写文章</a>
+            </div>
+
+            <div class="menu-item">
+                <h3 class="tag-title">标签</h3>
+
+                {% for t in tags %}
+                    <span class="tag">{{ t.name }}</span>
+                {% endfor %}
+
+            </div>
+
+            <div class="menu-item">
+                <h3 class="tag-title">常用工具</h3>
+
+                <ul class="tools">
+                    <li class="container-fluid">
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-2 col-xs-3">
+                            <a href="#"><img src="{% static 'img/logo.jpg' %}"></a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
 </div>
 
 {% include 'sub/foot.html' %}

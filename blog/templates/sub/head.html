@@ -16,7 +16,7 @@
                 <a class="header-text" href="#"><img src="{% static 'img/logo.jpg' %}"></a>
 
                 {% for k in mains.1 %}
-                    <a class="header-text navbar-link" href="#{{ f.id }}">{{ f.name }}</a>
+                    <a class="header-text navbar-link" href="?pid={{ k.id }}">{{ k.name }}</a>
                 {% endfor %}
 
                 <a class="header-text search-header-btn hidden-lg hidden-md glyphicon glyphicon-search"></a>
@@ -32,10 +32,8 @@
             <div class="collapse navbar-collapse" id="collapse-menu">
                 <ul class="nav navbar-nav">
 
-                    {% for f in mains %}
-                        {% if f.style == 2 %}
-                            <li><a href="#{{ f.id }}">{{ f.name }}</a></li>
-                        {% endif %}
+                    {% for k in mains.2 %}
+                        <li><a href="?pid={{ k.id }}">{{ k.name }}</a></li>
                     {% endfor %}
 
                     <li class="dropdown">
@@ -46,9 +44,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            {% for f in mains %}
-                                {% if f.style == 3 %}
-                                    <li><a href="#{{ f.id }}">{{ f.name }}</a></li>
+                            {% for k in mains.3 %}
+                                {% if k.style == 3 %}
+                                    <li><a href="?pid={{ k.id }}">{{ k.name }}</a></li>
                                 {% else %}
                                     <li role="separator" class="divider"></li>
                                 {% endif %}
