@@ -29,22 +29,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog'
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'look_pen.urls'
@@ -60,8 +50,6 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.template.context_processors.static',  # 静态文件查询
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -75,10 +63,10 @@ WSGI_APPLICATION = 'look_pen.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "HOST": 'localhost',
+        "HOST": '104.225.144.102',
         "NAME": 'look_pen',
-        "USER": 'root',
-        "PASSWORD": 'root',
+        "USER": 'pen',
+        "PASSWORD": 'swartz.dzjx',
         "PORT": '3306',
         "OPTIONS": {
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
